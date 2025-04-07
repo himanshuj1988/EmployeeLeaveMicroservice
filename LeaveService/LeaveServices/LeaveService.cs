@@ -39,6 +39,7 @@ namespace LeaveService.LeaveServices
 
             var message = new NotificationMessage
             {
+                ToUser = "manager.sdd@yopmail.com",
                 RecipientRole = "Staff",
                 RecipientId = leave.UserId,
                 Message = $"Leave request submitted from {leave.FromDate:yyyy-MM-dd} to {leave.ToDate:yyyy-MM-dd}.",
@@ -59,6 +60,7 @@ namespace LeaveService.LeaveServices
 
             var message = new NotificationMessage
             {
+                ToUser = "user.sdd@yopmail.com",
                 RecipientRole = "Patient",
                 RecipientId = leave.UserId,
                 Message = $"Your leave request from {leave.FromDate:yyyy-MM-dd} to {leave.ToDate:yyyy-MM-dd} has been {status}.",

@@ -19,7 +19,7 @@ namespace LeaveService.LeaveRepository
         }
         public LeaveDto GetLastLeaveByUser(int userId)
         {
-            return _context.EmployeeLeaves.Where(l => l.UserId == userId).OrderByDescending(l => l.Id).FirstOrDefault();
+            return  _context.EmployeeLeaves.Where(l => l.UserId == userId).OrderByDescending(l => l.Id).FirstOrDefault();
         }
         public IEnumerable<LeaveDto> GetAllLeaves()
         {

@@ -4,6 +4,7 @@ namespace Common.Notification
 {
     public class NotificationMessage
     {
+        public string ToUser { get; set; }
         public string RecipientRole { get; set; }
         public int RecipientId { get; set; }
         public string Message { get; set; }

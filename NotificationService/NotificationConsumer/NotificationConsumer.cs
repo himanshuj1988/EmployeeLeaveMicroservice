@@ -5,6 +5,7 @@ using NotificationService.DTO;
 using System.Threading.Tasks;
 using System;
 using Common.Notification;
+using BuildingBlock.Shared;
 
 namespace NotificationService.NotificationConsumer
 {
@@ -31,7 +32,7 @@ namespace NotificationService.NotificationConsumer
 
             await _context.SaveChangesAsync();
 
-            Console.WriteLine($"[NOTIFICATION] To {msg.RecipientRole} ({msg.RecipientId}): {msg.Message}");
+            await CommonService.SendMail(msg.ToUser, "Leave", "Leave " + msg.Type);
         }
     }
 }
